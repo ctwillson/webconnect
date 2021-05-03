@@ -7,7 +7,7 @@ def socket_service_data():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.bind(('127.0.0.1', 6666))  # 在同一台主机的ip下使用测试ip进行通信
+        s.bind(('172.16.0.5', 3389))  # 在同一台主机的ip下使用测试ip进行通信
         # s.bind(('192.168.20.1', 6666))  #在不同主机或者同一主机的不同系统下使用实际ip
         s.listen(10)
     except socket.error as msg:
